@@ -12,10 +12,11 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import "./global.css";
 // import Badge from "./components/Badge";
-import BadgeNew from "./pages/BadgeNew";
+// import BadgeNew from "./pages/BadgeNew";
 
-import Badges from "./pages/Badges";
+// import Badges from "./pages/Badges";
 
+import App from "./components/App";
 // const element = <h1>Hello, Platzi Badges!</h1>;
 // const element = React.createElement(
 //   "a",
@@ -46,4 +47,4 @@ const container = document.getElementById("app");
 //   />,
 //   container
 // );
-ReactDOM.render(<Badges />, container);
+ReactDOM.render(<App />, container);
