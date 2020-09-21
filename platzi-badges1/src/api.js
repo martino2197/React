@@ -26,10 +26,11 @@ const api = {
     list() {
       //   return [];
       //   throw new Error("Not found");
-      throw new Error("500: Server Error");
-      //   return callApi("/badges");
+      //   throw new Error("500: Server Error");
+      return callApi("/badges");
     },
     create(badge) {
+      //   throw new Error("500: Server error");
       return callApi(`/badges`, {
         method: "POST",
         body: JSON.stringify(badge),

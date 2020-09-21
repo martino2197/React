@@ -15,17 +15,16 @@ class BadgeForm extends React.Component {
     console.log("Button was clicked");
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault(); //evitamos que el formulario se envie por defecto
-    console.log("Form was submitted");
-    console.log(this.state);
-  };
+  //   handleSubmit = (e) => {
+  //     e.preventDefault(); //evitamos que el formulario se envie por defecto
+  //     console.log("Form was submitted");
+  //     console.log(this.state);
+  //   };
 
   render() {
     return (
       <div>
-        <h1>New Attendant</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>First Name</label>
             <input
@@ -36,7 +35,6 @@ class BadgeForm extends React.Component {
               value={this.props.formValues.firstName}
             />
           </div>
-
           <div className="form-group">
             <label>Last Name</label>
             <input
@@ -47,7 +45,6 @@ class BadgeForm extends React.Component {
               value={this.props.formValues.lastName}
             />
           </div>
-
           <div className="form-group">
             <label>Email</label>
             <input
@@ -58,7 +55,6 @@ class BadgeForm extends React.Component {
               value={this.props.formValues.email}
             />
           </div>
-
           <div className="form-group">
             <label>Job Title</label>
             <input
@@ -69,7 +65,6 @@ class BadgeForm extends React.Component {
               value={this.props.formValues.jobTitle}
             />
           </div>
-
           <div className="form-group">
             <label>Twitter</label>
             <input
@@ -80,7 +75,6 @@ class BadgeForm extends React.Component {
               value={this.props.formValues.twitter}
             />
           </div>
-
           <button
             type="submit" //Por defecto esta en submit
             onClick={this.handleClick}
@@ -88,6 +82,10 @@ class BadgeForm extends React.Component {
           >
             Save
           </button>
+
+          {this.props.error && ( //lo que sigue es una especie de if
+            <p className="text-danger">{this.props.error.message}</p>
+          )}
         </form>
       </div>
     );
