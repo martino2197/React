@@ -12,6 +12,7 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Switch>
+          {/* <Route exact path="" component={Badges} /> */}
           <Route exact path="/badges" component={Badges} />
           <Route exact path="/badges/new" component={BadgeNew} />
           <Route exact path="/badges/:badgeId/edit" component={BadgeEdit} />
